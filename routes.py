@@ -6,7 +6,6 @@ import logging
 import urllib.request
 import ipaddress 
 import json
-import time
 
 # Base path
 base_path = "/Library/Application Support/ViscosityScripts/"
