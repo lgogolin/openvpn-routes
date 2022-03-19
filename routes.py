@@ -10,7 +10,7 @@ import time
 
 # Base path
 base_path = "/Library/Application Support/ViscosityScripts/"
-# Cache file
+# Backup file
 backup_file = base_path + "backup"
 # Log file
 log_file = base_path + "routes.log"
@@ -70,11 +70,11 @@ def cidr_version(cidr):
   else:
     return False
 
-# Compare downloaded CIDRs with cache
-def compare(cache_cidrs, new_cidrs):
-  cache_cidrs.sort()
+# Compare downloaded CIDRs with backup
+def compare(backup_cidrs, new_cidrs):
+  backup_cidrs.sort()
   new_cidrs.sort()
-  if cache_cidrs != new_cidrs:
+  if backup_cidrs != new_cidrs:
     logging.info("We have newer CIDRs list")
     return True
   else:
@@ -164,7 +164,7 @@ if __name__ == "__main__":
 
   # route-pre-down - Deleting temporary route before stopping VPN
   elif sys.argv[1] == "down": 
-    # Read cache from file
+    # Reading cidrs from backup
     backup = read_backup(backup_file)
     logging.info("Removing extra routes")
     for cidr in backup:
