@@ -10,12 +10,20 @@ To get started, you will need to enable the AllowOpenVPNScripts option in Viscos
 /Applications/Viscosity.app/Contents/MacOS/Viscosity -setSecureGlobalSetting YES -setting AllowOpenVPNScripts -value YES
 ```
 
+Also We need to enable `Allow unsafe OpenVPN commands to be used`
+![drawing](img/scr1.png)
+
 ### script installation
 Next, you'll need to create a script that will inject routes for Your split-tunneling configuration
 
+```
+git clone git@github.com:lgogolin/openvpn-routes.git
+cd openvpn-routes
+```
+
 ```shell
 sudo mkdir "/Library/Application Support/ViscosityScripts"
-sudo cp ~/routes.py "/Library/Application Support/ViscosityScripts"
+sudo cp routes.py "/Library/Application Support/ViscosityScripts"
 sudo chown -R root:wheel "/Library/Application Support/ViscosityScripts"
 sudo chmod -R 755 "/Library/Application Support/ViscosityScripts"
 ```
