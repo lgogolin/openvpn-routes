@@ -38,3 +38,7 @@ up "/Library/Application\\ Support/ViscosityScripts/routes.py up"
 resolv-retry infinite
 ```
 
+
+## License
+
+MIT-License. As is. No warranties whatsoever. Mileage may vary. Batteries not included.
